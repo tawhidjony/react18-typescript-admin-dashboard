@@ -1,11 +1,13 @@
-import React from 'react'
+import { SidebarHeader, SidebarWrapper } from './Sidebar.style';
 
-type Props = {}
+type Props = {};
 
 const Sidebar = (props: Props) => {
-  return (
-    <div>Sidebar</div>
-  )
-}
+    return (
+        <SidebarWrapper>
+            <SidebarHeader>Dashboard</SidebarHeader>
+        </SidebarWrapper>
+    );
+};
 
-export default Sidebar
+export default Sidebar;
