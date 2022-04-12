@@ -2,7 +2,8 @@ import { FC, useContext, useState } from 'react';
 import { MdMenu, MdCircleNotifications, MdChat } from 'react-icons/md';
 import { SiGravatar } from 'react-icons/si';
 import { LayoutToggleContext } from '../../../Context/LayoutContext/LayoutContextProvider';
-import { DropdownMenu, MenuIcon, NavBar, RightDropdown } from './TopHeader.style';
+import { MainHeaderLeft, NavBar, MainHeaderRight } from './TopHeader.style';
+import AvatarImg from '../../../assets/Icons/avatar-icon.jpg';
 
 type Props = {};
 interface LayoutContextInterface {
@@ -12,29 +13,42 @@ interface LayoutContextInterface {
 const TopHeader: FC<Props> = () => {
     const { isOpen, setIsOpen } = useContext<LayoutContextInterface>(LayoutToggleContext);
     const [profileMenu, setProfileMenu] = useState<boolean>(false);
-    console.log(isOpen);
+   
 
     return (
         <NavBar>
-            <MenuIcon>
-                <MdMenu size={30} onClick={() => setIsOpen(!isOpen)} />
+            <MainHeaderLeft>
+                <MdMenu size={35} onClick={() => setIsOpen(!isOpen)} />
                 <span>Welcome Tawhid to your dashboard</span>
-            </MenuIcon>
-            <RightDropdown>
+            </MainHeaderLeft>
+            <MainHeaderRight>
                 <ul>
+                    <li>
+                        <a href=""><MdCircleNotifications size={25} /></a>
+                    </li>
+                    <li>
+                        <a href=""><MdChat size={25} /></a>
+                    </li>
+                    <li>
+                        <a href=""><MdChat size={25} /></a>
+                    </li>
+                    <li>
+                        <a href=""><MdChat size={25} /></a>
+                    </li>
+                    <li>
+                        <a href=""><MdChat size={25} /></a>
+                    </li>
+                    <li>
+                        <a href=""><MdChat size={25} /></a>
+                    </li>
                     <li onClick={() => setProfileMenu(!profileMenu)}>
-                        <SiGravatar size={20} />
-                        <span>MD Tawhidur Rahman</span>
-                        <DropdownMenu showHide={profileMenu}>dropdown</DropdownMenu>
-                    </li>
-                    <li>
-                        <MdChat size={20} />
-                    </li>
-                    <li>
-                        <MdCircleNotifications size={20} />
+                        <a href="" >
+                            <img src={AvatarImg} alt="" width={'100%'} />
+                        </a>
+                        {/* <DropdownMenu showHide={profileMenu}>dropdown</DropdownMenu> */}
                     </li>
                 </ul>
-            </RightDropdown>
+            </MainHeaderRight>
         </NavBar>
     );
 };

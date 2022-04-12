@@ -14,5 +14,5 @@ export const MainArea = styled.div`
 
 export const Wrapper = styled.div`
     padding: 1rem;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 64px);
 `;
