@@ -1,8 +1,8 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import LayoutToggleContextProvider from '../../Context/LayoutContext/LayoutContextProvider';
-import { Container, MainArea, Wrapper } from './Layout.style';
+import { Container } from './Layout.style';
+import MainWrapper from './MainWrapper/MainWrapper';
 import Sidebar from './Sidebar/Sidebar';
-import TopHeader from './TopHeader/TopHeader';
 
 type ILayout = {
     children: React.ReactNode;
@@ -13,10 +13,7 @@ const Layout: FC<ILayout> = ({ children }) => {
         <Container>
             <LayoutToggleContextProvider>
                 <Sidebar />
-                <MainArea>
-                    <TopHeader />
-                    <Wrapper>{children}</Wrapper>
-                </MainArea>
+                <MainWrapper children={children} />
             </LayoutToggleContextProvider>
         </Container>
     );

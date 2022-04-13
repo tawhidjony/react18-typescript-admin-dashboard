@@ -4,10 +4,10 @@ export const SidebarWrapper = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    width: 240px;
+    width: ${(props: { collapseMenu: boolean }) => (props.collapseMenu ? '64px' : '240px')};
     height: 100%;
     background: ${(props) => props.theme.white};
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     overflow: hidden;
     z-index: 999;
     border-right: 1px solid ${(props) => props.theme.borderColor};
